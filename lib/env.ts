@@ -21,5 +21,5 @@ export function runtimeReason(): string {
   if (hasQlooKey()) {
     return "Live Qloo taste graph. Gemini is not configured, so the memo uses the deterministic strategist.";
   }
-  return "Preview build — Qloo credentials are not attached, so memos replay from the curated archive. The full live pipeline ships in the repository.";
+  return "Qloo credentials are not attached, so memos replay from the curated archive. The full live pipeline ships in the repository.";
 }
