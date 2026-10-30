@@ -40,8 +40,12 @@ export function SiteHeader() {
           </a>
         </nav>
 
-        <Link href="/match" className="btn btn-primary h-10 px-3.5 text-[0.65rem] sm:px-4 sm:text-[0.7rem]">
-          Run a match
+        <Link
+          href="/match"
+          aria-label="Run a match"
+          className="btn btn-primary h-10 w-10 shrink-0 justify-center px-0 text-[0.7rem] min-[480px]:w-auto min-[480px]:px-4"
+        >
+          <span className="hidden min-[480px]:inline">Run a match</span>
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>

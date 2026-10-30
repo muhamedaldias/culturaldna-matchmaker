@@ -142,7 +142,7 @@ export function AnalysisExperience({
 
   return (
     <div ref={topRef} className="scroll-mt-24">
-      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,26.5rem)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,26.5rem)_minmax(0,1fr)]">
         <BrandForm
           status={status}
           a={a}

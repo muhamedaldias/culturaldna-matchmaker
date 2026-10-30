@@ -6,6 +6,8 @@ Built for the **Qloo Agentic Hackathon 2026**.
 
 [Live demo](https://culturaldna-matchmaker.vercel.app) · [Method & weights](https://culturaldna-matchmaker.vercel.app/method) · MIT licensed
 
+[![CI](https://github.com/muhamedaldias/culturaldna-matchmaker/actions/workflows/ci.yml/badge.svg)](https://github.com/muhamedaldias/culturaldna-matchmaker/actions/workflows/ci.yml)
+
 ![Landing page](docs/screenshots/landing.png)
 
 ---
