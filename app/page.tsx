@@ -276,7 +276,7 @@ export default function HomePage() {
             <div>
               <div className="grid border border-paper-2/20 sm:grid-cols-2">
                 <div className="bg-paper-2/[0.04] p-5 sm:p-6">
-                  <p className="label text-paper-2/45">A · Before evidence</p>
+                  <p className="label text-paper-2/65">A · Before evidence</p>
                   <p className="mt-4 font-display text-[1.35rem] leading-snug">{lead.blind.guess}</p>
                   <p className="mt-3 text-xs leading-relaxed text-paper-2/55">
                     {lead.blind.rationale}
@@ -294,11 +294,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="border-t border-paper-2/20 bg-teal p-5 text-paper-2 sm:border-l sm:border-t-0 sm:p-6">
-                  <p className="label text-paper-2/55">B · After evidence</p>
+                  <p className="label text-paper-2/85">B · After evidence</p>
                   <p className="mt-4 font-display text-[1.35rem] leading-snug">
                     {lead.informed.headline}
                   </p>
-                  <p className="mt-3 text-xs leading-relaxed text-paper-2/65">
+                  <p className="mt-3 text-xs leading-relaxed text-paper-2/85">
                     {lead.informed.paragraphs[0]}
                   </p>
                 </div>

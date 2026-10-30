@@ -445,7 +445,7 @@ export function MomentumSection({ report }: { report: Report }) {
                 <p className="font-display text-lg leading-none">{series.entity}</p>
                 <span
                   className={`font-mono text-xs tabular ${
-                    series.momentum >= 0 ? "text-teal" : "text-orange"
+                    series.momentum >= 0 ? "text-teal" : "text-orange-deep"
                   }`}
                 >
                   {series.deltaLabel}
@@ -549,7 +549,7 @@ export function SafetySection({ report }: { report: Report }) {
                 <li key={flag.code} className="border-t border-line py-3 first:border-t-0 first:pt-0">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <span className="text-sm font-medium">{flag.label}</span>
-                    <span className="font-mono text-xs text-orange">−{flag.penalty}</span>
+                    <span className="font-mono text-xs text-orange-deep">−{flag.penalty}</span>
                   </div>
                   <p className="mt-1 text-sm leading-relaxed text-ink-2">{flag.detail}</p>
                 </li>

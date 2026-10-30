@@ -184,7 +184,7 @@ export function BrandForm({
 
         <div className="mt-3 min-h-[2.5rem]" aria-live="polite">
           {sameName && filled ? (
-            <p className="text-xs leading-relaxed text-orange">
+            <p className="text-xs leading-relaxed text-orange-deep">
               Pick two different brands — a brand cannot be matched with itself.
             </p>
           ) : previewBlocked ? (

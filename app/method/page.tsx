@@ -392,7 +392,7 @@ export default function MethodPage() {
               {SAFETY_RULE_SUMMARY.map((rule) => (
                 <tr key={rule.code} className="border-t border-line align-top">
                   <td className="whitespace-nowrap px-3 py-3 text-sm font-medium">{rule.label}</td>
-                  <td className="px-3 py-3 font-mono text-sm tabular text-orange">
+                  <td className="px-3 py-3 font-mono text-sm tabular text-orange-deep">
                     −{rule.penalty}
                   </td>
                   <td className="px-3 py-3 font-mono text-[0.55rem] uppercase leading-relaxed tracking-[0.08em] text-ink-3">

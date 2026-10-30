@@ -6,12 +6,13 @@
   --color-paper-3: #e9e2d2;
   --color-ink: #12110d;
   --color-ink-2: #423e33;
-  --color-ink-3: #726c5e;
+  --color-ink-3: #67614f;
   --color-line: #d9d0bc;
   --color-line-strong: #b9ae96;
   --color-lime: #d8ff3e;
   --color-lime-deep: #b6e01f;
   --color-orange: #ff5a36;
+  --color-orange-deep: #b02d0c;
   --color-orange-soft: #ffe1d8;
   --color-teal: #0f5c55;
   --color-teal-soft: #d8e8e3;
@@ -80,6 +81,11 @@
     outline: 2px solid var(--color-ink);
     outline-offset: 3px;
     border-radius: 2px;
+  }
+
+  /* On the dark investigation desk the ink outline disappears; use lime. */
+  .bg-ink :focus-visible {
+    outline-color: var(--color-lime);
   }
 
   input::placeholder,

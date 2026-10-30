@@ -23,7 +23,7 @@ function ProviderChip({ label, on }: { label: string; on: boolean }) {
       className={`inline-flex items-center gap-1.5 border px-2 py-1 font-mono text-[0.52rem] uppercase leading-none tracking-[0.12em] ${
         on
           ? "border-paper-2/30 bg-paper-2/5 text-paper-2/90"
-          : "border-paper-2/15 text-paper-2/40"
+          : "border-paper-2/15 text-paper-2/60"
       }`}
     >
       <span aria-hidden className={`h-1.5 w-1.5 ${on ? "bg-lime" : "bg-paper-2/25"}`} />
@@ -76,7 +76,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
           <h2 id="desk-title" className="label text-paper-2/70">
             Investigation desk
           </h2>
-          <span className="hidden font-mono text-[0.55rem] uppercase tracking-[0.12em] text-paper-2/35 sm:inline">
+          <span className="hidden font-mono text-[0.55rem] uppercase tracking-[0.12em] text-paper-2/60 sm:inline">
             {state.status === "running"
               ? "in session"
               : state.status === "done"
@@ -93,7 +93,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
 
       <div className="grid lg:grid-cols-[252px_minmax(0,1fr)]">
         <div className="border-b border-paper-2/15 lg:border-b-0 lg:border-r">
-          <p className="hidden px-4 pb-2 pt-3 font-mono text-[0.55rem] uppercase tracking-[0.14em] text-paper-2/35 lg:block">
+          <p className="hidden px-4 pb-2 pt-3 font-mono text-[0.55rem] uppercase tracking-[0.14em] text-paper-2/60 lg:block">
             Chain of agents
           </p>
           <ul className="grid grid-cols-2 gap-px bg-paper-2/10 lg:grid-cols-1">
@@ -104,10 +104,10 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                   key={agent}
                   aria-label={`${stage.label}: ${stage.status}`}
                   className={`flex items-center gap-2.5 bg-ink px-3 py-2.5 ${
-                    stage.status === "pending" ? "text-paper-2/40" : "text-paper-2/90"
+                    stage.status === "pending" ? "text-paper-2/60" : "text-paper-2/90"
                   }`}
                 >
-                  <span className="font-mono text-[0.52rem] tabular text-paper-2/30">
+                  <span className="font-mono text-[0.52rem] tabular text-paper-2/55">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <StageDot status={stage.status} />
@@ -140,11 +140,11 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                 className={`flex items-center gap-2 border-b-2 px-4 py-2.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] transition-colors ${
                   tab === key
                     ? "border-lime text-paper-2"
-                    : "border-transparent text-paper-2/45 hover:text-paper-2/80"
+                    : "border-transparent text-paper-2/65 hover:text-paper-2/80"
                 }`}
               >
                 {label}
-                <span className="tabular text-paper-2/40">{String(count).padStart(2, "0")}</span>
+                <span className="tabular text-paper-2/60">{String(count).padStart(2, "0")}</span>
               </button>
             ))}
             {state.status === "running" ? (
@@ -153,7 +153,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                 {formatDuration(elapsed)}
               </span>
             ) : state.status === "done" ? (
-              <span className="ml-auto px-4 font-mono text-[0.58rem] tabular text-paper-2/45">
+              <span className="ml-auto px-4 font-mono text-[0.58rem] tabular text-paper-2/65">
                 {formatDuration(elapsed)}
               </span>
             ) : null}
@@ -164,7 +164,8 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
             id={`desk-panel-${tab}`}
             aria-labelledby={`desk-tab-${tab}`}
             ref={listRef}
-            className="h-[300px] overflow-y-auto sm:h-[330px] lg:h-[342px]"
+            tabIndex={0}
+            className="h-[300px] overflow-y-auto focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-lime sm:h-[330px] lg:h-[342px]"
           >
             {tab === "trace" ? (
               state.traces.length > 0 ? (
@@ -172,14 +173,14 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                   {state.traces.map((entry) => (
                     <li key={entry.id} className="px-4 py-2.5">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-mono text-[0.52rem] tabular text-paper-2/35">
+                        <span className="font-mono text-[0.52rem] tabular text-paper-2/60">
                           {formatClock(entry.at)}
                         </span>
                         <span className="font-mono text-[0.52rem] uppercase tracking-[0.12em] text-lime/75">
                           {entry.agent}
                         </span>
                         {entry.durationMs !== undefined ? (
-                          <span className="ml-auto font-mono text-[0.52rem] tabular text-paper-2/35">
+                          <span className="ml-auto font-mono text-[0.52rem] tabular text-paper-2/60">
                             {formatDuration(entry.durationMs)}
                           </span>
                         ) : null}
@@ -196,7 +197,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                         {entry.message}
                       </p>
                       {entry.detail ? (
-                        <p className="mt-0.5 text-[0.68rem] leading-relaxed text-paper-2/45">
+                        <p className="mt-0.5 text-[0.68rem] leading-relaxed text-paper-2/65">
                           {entry.detail}
                         </p>
                       ) : null}
@@ -204,7 +205,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                   ))}
                 </ul>
               ) : (
-                <p className="px-4 py-6 text-xs text-paper-2/40">
+                <p className="px-4 py-6 text-xs text-paper-2/60">
                   Waiting for the first signal.
                 </p>
               )
@@ -214,12 +215,12 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                   <li key={probe.id} className="px-4 py-2.5">
                     <div className="flex items-center justify-between gap-3">
                       <span className="font-mono text-[0.52rem] text-lime/75">{probe.id}</span>
-                      <span className="font-mono text-[0.52rem] tabular text-paper-2/35">
+                      <span className="font-mono text-[0.52rem] tabular text-paper-2/60">
                         {formatDuration(probe.durationMs)}
                       </span>
                     </div>
                     <p className="mt-1 text-xs leading-relaxed text-paper-2/85">{probe.label}</p>
-                    <p className="mt-0.5 font-mono text-[0.55rem] leading-relaxed text-paper-2/40">
+                    <p className="mt-0.5 font-mono text-[0.55rem] leading-relaxed text-paper-2/60">
                       {probe.endpoint} · {probe.resultCount} rows
                       {probe.selectedBy === "model" ? " · model-selected" : ""}
                       {probe.mode === "demo" ? " · archive" : ""}
@@ -228,7 +229,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
                 ))}
               </ul>
             ) : (
-              <p className="px-4 py-6 text-xs text-paper-2/40">
+              <p className="px-4 py-6 text-xs text-paper-2/60">
                 No probes logged yet. Every query that runs will be listed here.
               </p>
             )}
@@ -237,7 +238,7 @@ export function RunConsole({ state, onStop }: { state: RunState; onStop: () => v
       </div>
 
       <footer className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-paper-2/15 px-4 py-2.5">
-        <p className="max-w-[60ch] text-[0.65rem] leading-relaxed text-paper-2/40">
+        <p className="max-w-[60ch] text-[0.65rem] leading-relaxed text-paper-2/60">
           {state.mode === "demo"
             ? "Archive replay · no external calls made. Evidence is illustrative, not live Qloo output."
             : state.providers.gemini
