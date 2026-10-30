@@ -1,0 +1,437 @@
+import type { DemoFixture } from "@/lib/fixtures/type";
+import { brand, city, tag, trend } from "@/lib/fixtures/helpers";
+
+export const patagoniaWholeFoods: DemoFixture = {
+  slug: "patagonia-whole-foods",
+  location: "United States",
+  subtitle: "Outdoor apparel × natural grocery",
+  a: brand({
+    id: "demo:brand:patagonia",
+    name: "Patagonia",
+    type: "brand",
+    subtype: "Outdoor apparel",
+    description:
+      "Ventura-based outdoor clothing company known for repair-first design, environmental campaigning and an anti-consumption posture.",
+    popularity: 0.91,
+  }),
+  b: brand({
+    id: "demo:brand:whole-foods",
+    name: "Whole Foods Market",
+    type: "brand",
+    subtype: "Natural grocery",
+    description:
+      "US grocery chain built on organic and natural sourcing, with a strong regional-supplier programme and prepared-food footprint.",
+    popularity: 0.89,
+  }),
+  shared: [
+    tag("tag:environmentalism", "environmentalism", "values", 0.93),
+    tag("tag:sustainability", "sustainability", "values", 0.91),
+    tag("tag:outdoor-recreation", "outdoor recreation", "lifestyle", 0.88),
+    tag("tag:organic-food", "organic food", "food", 0.84),
+    tag("tag:national-parks", "national parks", "travel", 0.81),
+    tag("tag:hiking", "hiking", "sport", 0.79),
+    tag("tag:farmers-markets", "farmers markets", "food", 0.77),
+    tag("tag:documentary-films", "documentary films", "film", 0.72),
+    tag("tag:slow-travel", "slow travel", "travel", 0.69),
+    tag("tag:indie-folk", "indie folk", "music", 0.66),
+    tag("tag:craft-beer", "craft beer", "food", 0.61),
+    tag("tag:yoga", "yoga", "wellness", 0.58),
+  ],
+  uniqueA: [
+    tag("tag:rock-climbing", "rock climbing", "sport", 0.83),
+    tag("tag:repair-culture", "repair culture", "values", 0.78, "The brand's strongest proprietary signal."),
+    tag("tag:fly-fishing", "fly fishing", "sport", 0.71),
+    tag("tag:surfing", "surfing", "sport", 0.69),
+    tag("tag:trail-running", "trail running", "sport", 0.67),
+    tag("tag:van-life", "van life", "travel", 0.64),
+    tag("tag:film-photography", "film photography", "culture", 0.62),
+  ],
+  uniqueB: [
+    tag("tag:home-cooking", "home cooking", "food", 0.86, "The grocery chain's deepest daily habit."),
+    tag("tag:specialty-coffee", "specialty coffee", "food", 0.79),
+    tag("tag:natural-wine", "natural wine", "food", 0.74),
+    tag("tag:food-justice", "food justice", "values", 0.71),
+    tag("tag:sourdough-baking", "sourdough baking", "food", 0.68),
+    tag("tag:community-gardening", "community gardening", "lifestyle", 0.66),
+    tag("tag:meditation", "meditation", "wellness", 0.62),
+  ],
+  cities: [
+    city(1, "Portland", 0.87, "Oregon"),
+    city(2, "Boulder", 0.84, "Colorado"),
+    city(3, "Austin", 0.81, "Texas"),
+    city(4, "Seattle", 0.8, "Washington"),
+    city(5, "Minneapolis", 0.76, "Minnesota"),
+    city(6, "Denver", 0.75, "Colorado"),
+    city(7, "San Francisco", 0.73, "California"),
+    city(8, "Burlington", 0.71, "Vermont"),
+    city(9, "Madison", 0.69, "Wisconsin"),
+    city(10, "Asheville", 0.68, "North Carolina"),
+  ],
+  demographics: {
+    a: [
+      { segment: "Adults 25–44", affinity: 0.82 },
+      { segment: "College-educated", affinity: 0.79 },
+      { segment: "Household income $100k+", affinity: 0.74 },
+      { segment: "Urban core", affinity: 0.71 },
+      { segment: "Parents, children under 12", affinity: 0.58 },
+    ],
+    b: [
+      { segment: "College-educated", affinity: 0.83 },
+      { segment: "Household income $100k+", affinity: 0.81 },
+      { segment: "Adults 30–54", affinity: 0.77 },
+      { segment: "Urban core", affinity: 0.69 },
+      { segment: "Parents, children under 12", affinity: 0.64 },
+    ],
+    sharedNote:
+      "Both audiences skew urban, educated and high-income. The useful difference is life stage: Whole Foods' audience is slightly older and more likely to have children — which is why a daytime, family-friendly format outperforms a late-night one.",
+  },
+  trends: [
+    trend("Patagonia", "brand", [64, 65, 67, 66, 69, 71, 70, 73, 75, 74, 77, 79]),
+    trend("Whole Foods Market", "brand", [58, 59, 58, 60, 61, 63, 62, 64, 65, 67, 66, 68]),
+    trend("Indie folk", "music", [51, 52, 50, 53, 54, 55, 54, 57, 58, 60, 59, 62]),
+  ],
+  crossDomain: [
+    {
+      entityType: "artist",
+      domainLabel: "Artists",
+      items: [
+        { name: "Fleet Foxes", affinity: 0.71 },
+        { name: "Bon Iver", affinity: 0.68 },
+        { name: "Brandi Carlile", affinity: 0.64 },
+      ],
+    },
+    {
+      entityType: "movie",
+      domainLabel: "Film",
+      items: [
+        { name: "Free Solo", affinity: 0.66 },
+        { name: "The Biggest Little Farm", affinity: 0.61 },
+        { name: "Fantastic Fungi", affinity: 0.59 },
+      ],
+    },
+    {
+      entityType: "destination",
+      domainLabel: "Places",
+      items: [
+        { name: "Bend, Oregon", affinity: 0.73 },
+        { name: "Taos, New Mexico", affinity: 0.66 },
+        { name: "Door County, Wisconsin", affinity: 0.61 },
+      ],
+    },
+  ],
+  plays: [
+    {
+      index: 1,
+      title: "The Trailhead Table",
+      thesis:
+        "Turn a trailhead into a long table. A roving weekend market where local Whole Foods producers cook, Patagonia's repair crew fixes gear, and a small stage hosts the kind of indie folk both audiences already share.",
+      format: "6 weekends · Portland, Boulder, Asheville · 400 covers per day",
+      city: "Portland, Oregon",
+      audience: "Urban outdoor households, 25–44",
+      successSignals: [
+        "Weekend footfall versus the nearest store baseline",
+        "Repair-desk bookings per hour",
+        "Local supplier applications to the Whole Foods regional programme",
+      ],
+      evidenceRefs: ["p-heatmap", "p-tags-a", "p-compare"],
+      confidence: "high",
+    },
+    {
+      index: 2,
+      title: "Provisions for the Long Way",
+      thesis:
+        "A co-branded trail-food line built on regenerative ingredients, sold in both retailers. The product is ordinary; the proof point is the published sourcing audit behind it, which turns supply-chain transparency into the campaign itself.",
+      format: "12-SKU line · Whole Foods + Patagonia stores · 2 seasons",
+      city: "Boulder, Colorado",
+      audience: "High-intent outdoor cooks and hikers",
+      successSignals: [
+        "Sell-through versus category benchmark",
+        "Repeat purchase within 60 days",
+        "Third-party sourcing audit published on schedule",
+      ],
+      evidenceRefs: ["p-tags-b", "p-books", "p-compare"],
+      confidence: "medium",
+    },
+    {
+      index: 3,
+      title: "The Repair Desk",
+      thesis:
+        "A four-part film series about repair — garments, tools, Land, relationships — paired with twenty in-store clinics. It gives Whole Foods a cultural story beyond groceries and gives Patagonia a physical stage beyond its own stores.",
+      format: "4 × 12-minute films + 20 clinics · national distribution",
+      city: "Seattle, Washington",
+      audience: "Documentary viewers and repair-curious owners",
+      successSignals: [
+        "Completed views on owned channels",
+        "Clinic attendance and gear saved from landfill",
+        "Earned media pick-up in design and food press",
+      ],
+      evidenceRefs: ["p-cross-movie", "p-tags-a", "p-trends"],
+      confidence: "medium",
+    },
+  ],
+  risks: [
+    {
+      title: "Greenwashing audit",
+      severity: "high",
+      detail:
+        "Both audiences are unusually fluent in environmental claims. A single unsupported statement will be dissected publicly, and the partner with the stronger record will absorb the damage.",
+      mitigation:
+        "Publish the sourcing methodology before launch, cap claims to what can be audited, and give an independent reviewer veto over campaign copy.",
+      evidenceRefs: ["p-tags-a", "p-tags-b"],
+    },
+    {
+      title: "Overlap is geographically concentrated",
+      severity: "medium",
+      detail:
+        "Affinity clusters in a handful of mountain-west and Pacific-northwest cities. A national campaign will feel thinner than the match index suggests.",
+      mitigation:
+        "Stage the rollout city by city and let the film series carry the national layer rather than a mass-media buy.",
+      evidenceRefs: ["p-heatmap"],
+    },
+    {
+      title: "Price-access tension",
+      severity: "medium",
+      detail:
+        "Whole Foods' premium position is a known line of criticism. A partnership that reads as expensive outdoor lifestyle will amplify it rather than soften it.",
+      mitigation:
+        "Include a free repair programme and at least one low-cost staple SKU; measure access alongside sell-through.",
+      evidenceRefs: ["p-demo-b", "p-compare"],
+    },
+  ],
+  safetyFlags: [
+    {
+      code: "greenwashing-scrutiny",
+      label: "Greenwashing scrutiny",
+      penalty: 9,
+      detail:
+        "Both audiences hold the brands to an auditable environmental standard; vague claims are a reputational liability.",
+    },
+    {
+      code: "price-access",
+      label: "Price-access tension",
+      penalty: 6,
+      detail:
+        "Premium grocery pricing and premium outdoor apparel compound the perception of an exclusive pairing.",
+    },
+  ],
+  blind: {
+    guess:
+      "A model working from brand descriptions would pair Patagonia with an EV maker, a fitness brand or a national park service.",
+    rationale:
+      "The descriptions say 'outdoors' and 'sustainability', so a language model optimises for category adjacency and produces a predictable alliance: hiking gear with hiking destinations, or purpose-led brand with purpose-led brand.",
+    predictedOverlap: [
+      "outdoor adventure",
+      "sustainability",
+      "healthy living",
+      "national parks",
+    ],
+    misses: [
+      "The food axis is deeper than the outdoor axis: home cooking, natural wine and specialty coffee out-rank fly fishing.",
+      "The strongest shared signal is repair and provenance — a values posture, not a product category.",
+      "Portland and Boulder beat Denver and San Francisco once food and music are included.",
+    ],
+    source: "curated",
+  },
+  informed: {
+    headline: "The overlap is values-led; the activation is culinary.",
+    paragraphs: [
+      "The shared signal is not simply 'nature'. It is a specific posture: restraint, repair, provenance. Patagonia contributes credibility in performance and repair culture; Whole Foods contributes a daily ritual — cooking, sourcing, hosting. That division of labour is what makes the pair more interesting than either brand's obvious partner list.",
+      "The geography is unusually concentrated. Portland, Boulder, Austin and Seattle carry the highest combined affinity, which argues for a city-by-city rollout rather than a national campaign. Those same cities over-index on farmers markets, trail access and independent music — the raw material for an offline format.",
+      "Two cautions. The audience is fluent in greenwashing and will audit claims; and Whole Foods' premium position sits awkwardly against food-access criticism. A partnership that leads with scarcity and price will read as elitist. One that leads with repair, provenance and access will read as consistent.",
+    ],
+  },
+  verdict: {
+    headline: "A values-first partnership with a food-and-farming second act.",
+    summary:
+      "The overlap is real and wider than the obvious 'outdoors + organic' headline: documentary film, slow travel, craft beer and indie folk all travel with both audiences. The strongest opportunity is not a co-branded product but a recurring, place-based ritual that gives both brands a reason to convene people offline.",
+    posture: "Pilot in the Mountain West, then scale through content.",
+  },
+  caveats: [
+    "Affinities are relative Qloo signals, not audience sizes.",
+    "City affinity measures cultural concentration, not sales potential.",
+    "The memo deliberately contains no revenue or ROI projections.",
+  ],
+  probes: [
+    {
+      id: "p-search-a",
+      agent: "scout",
+      label: "Resolve brand — Patagonia",
+      endpoint: "/search",
+      params: { query: "Patagonia", types: "urn:entity:brand", take: 5 },
+      resultCount: 5,
+      note: "Top match: Patagonia, outdoor apparel.",
+      durationMs: 312,
+    },
+    {
+      id: "p-search-b",
+      agent: "scout",
+      label: "Resolve brand — Whole Foods Market",
+      endpoint: "/search",
+      params: { query: "Whole Foods Market", types: "urn:entity:brand", take: 5 },
+      resultCount: 5,
+      note: "Top match: Whole Foods Market, natural grocery.",
+      durationMs: 296,
+    },
+    {
+      id: "p-entities",
+      agent: "scout",
+      label: "Confirm entity records",
+      endpoint: "/entities",
+      params: { entity_ids: "patagonia,whole-foods-market" },
+      resultCount: 2,
+      durationMs: 188,
+    },
+    {
+      id: "p-tags-a",
+      agent: "ethnographer",
+      label: "Taste tags — Patagonia",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": "Patagonia",
+        take: 40,
+      },
+      resultCount: 40,
+      durationMs: 428,
+    },
+    {
+      id: "p-tags-b",
+      agent: "ethnographer",
+      label: "Taste tags — Whole Foods Market",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": "Whole Foods Market",
+        take: 40,
+      },
+      resultCount: 40,
+      durationMs: 452,
+    },
+    {
+      id: "p-compare",
+      agent: "diplomat",
+      label: "Shared vs unique taste",
+      endpoint: "/v2/analysis/compare",
+      params: {
+        "a.signal.interests.entities": "Patagonia",
+        "b.signal.interests.entities": "Whole Foods Market",
+        "filter.type": "urn:tag",
+        take: 40,
+      },
+      resultCount: 26,
+      note: "12 shared tags survive the top-40 cut.",
+      durationMs: 512,
+    },
+    {
+      id: "p-demo-a",
+      agent: "ethnographer",
+      label: "Audience profile — Patagonia",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:demographics",
+        "signal.interests.entities": "Patagonia",
+        take: 25,
+      },
+      resultCount: 25,
+      durationMs: 390,
+    },
+    {
+      id: "p-demo-b",
+      agent: "ethnographer",
+      label: "Audience profile — Whole Foods Market",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:demographics",
+        "signal.interests.entities": "Whole Foods Market",
+        take: 25,
+      },
+      resultCount: 25,
+      durationMs: 402,
+    },
+    {
+      id: "p-heatmap",
+      agent: "cartographer",
+      label: "City affinity",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:heatmap",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        "filter.location.query": "United States",
+        take: 50,
+      },
+      resultCount: 50,
+      note: "Portland and Boulder lead; the top five cities carry 31% of total affinity.",
+      durationMs: 780,
+    },
+    {
+      id: "p-trends",
+      agent: "timekeeper",
+      label: "12-month momentum",
+      endpoint: "/v2/trending",
+      params: {
+        "filter.type": "urn:entity:brand",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        "filter.start_date": "2025-11-01",
+        "filter.end_date": "2026-10-01",
+        take: 50,
+      },
+      resultCount: 24,
+      durationMs: 640,
+    },
+    {
+      id: "p-cross-artist",
+      agent: "ethnographer",
+      label: "Cross-domain — artists",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:entity:artist",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        take: 8,
+      },
+      resultCount: 8,
+      durationMs: 366,
+    },
+    {
+      id: "p-cross-movie",
+      agent: "ethnographer",
+      label: "Cross-domain — film",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        take: 8,
+      },
+      resultCount: 8,
+      durationMs: 352,
+    },
+    {
+      id: "p-cross-destination",
+      agent: "ethnographer",
+      label: "Cross-domain — destinations",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:entity:destination",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        take: 8,
+      },
+      resultCount: 8,
+      durationMs: 371,
+    },
+    {
+      id: "p-books",
+      agent: "strategist",
+      label: "Model-selected probe — nature writing",
+      endpoint: "/v2/insights",
+      params: {
+        "filter.type": "urn:entity:book",
+        "signal.interests.entities": "Patagonia,Whole Foods Market",
+        "filter.tags": "nature writing",
+        take: 6,
+      },
+      resultCount: 6,
+      note: "The Strategist chose this probe to test whether the pairing carries a reading culture.",
+      durationMs: 344,
+      selectedBy: "model",
+    },
+  ],
+};
