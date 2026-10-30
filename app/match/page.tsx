@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Run a match",
   description:
     "Open a case file for any two brands. Seven agents probe Qloo's taste graph and return a due-diligence memo with a deterministic score and a full evidence ledger.",
+  alternates: { canonical: "/match" },
 };
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;

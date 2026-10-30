@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Method & limits",
   description:
     "The full method behind CulturalDNA Matchmaker: Qloo endpoints, scoring weights, confidence, the blind test, the safety lexicon, failure modes and reproduction steps.",
+  alternates: { canonical: "/method" },
 };
 
 const PROBES = [

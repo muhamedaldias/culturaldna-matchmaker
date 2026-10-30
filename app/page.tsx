@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { buildDemoReport } from "@/lib/fixtures/build";
 import { FIXTURES, patagoniaWholeFoods } from "@/lib/fixtures";
 import { TIER_META } from "@/lib/scoring";
@@ -6,6 +7,10 @@ import { ModeBadge } from "@/components/mode-badge";
 import { ScoreBar } from "@/components/report/parts";
 import { ArrowRight, ArrowUpRight, HelixStrand } from "@/components/marks";
 import { formatDate } from "@/lib/format";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const STAMP = new Date("2026-10-30T12:00:00Z");
 
